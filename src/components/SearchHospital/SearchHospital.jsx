@@ -70,7 +70,8 @@ export default function SearchHospital() {
         flexDirection: { xs: "column", md: "row" },
       }}
     >
-      <Select
+      <div id="state">
+        <Select
         displayEmpty
         id="state"
         name="state"
@@ -93,8 +94,9 @@ export default function SearchHospital() {
           </MenuItem>
         ))}
       </Select>
-
-      <Select
+      </div>
+      <div id="city">
+        <Select
         displayEmpty
         id="city"
         name="city"
@@ -117,6 +119,7 @@ export default function SearchHospital() {
           </MenuItem>
         ))}
       </Select>
+      </div>
 
       <Button
         type="submit"
@@ -125,6 +128,7 @@ export default function SearchHospital() {
         startIcon={<SearchIcon />}
         sx={{ py: "15px", px: 8, flexShrink: 0 }}
         disableElevation
+        id='searchBtn'
       >
         Search
       </Button>
