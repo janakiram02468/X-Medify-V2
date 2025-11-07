@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Search from "./Search/Search";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./Home/Home";
 import { createTheme, ThemeProvider } from "@mui/material";
 import MyBookings from "./MyBookings/MyBookings";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
