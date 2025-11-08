@@ -61,78 +61,72 @@ export default function SearchHospital() {
 
   return (
     <Box
-  component="form"
-  onSubmit={handleSubmit}
-  sx={{
-    display: "flex",
-    gap: 4,
-    justifyContent: "space-between",
-    flexDirection: { xs: "column", md: "row" },
-  }}
->
-  <div>
-    <Select
-      displayEmpty
-      id="state"  // ✅ keep only here
-      name="state"
-      value={formData.state}
-      onChange={handleChange}
-      startAdornment={
-        <InputAdornment position="start">
-          <SearchIcon />
-        </InputAdornment>
-      }
-      required
-      sx={{ minWidth: 200, width: "100%" }}
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: "flex",
+        gap: 4,
+        justifyContent: "space-between",
+        flexDirection: { xs: "column", md: "row" },
+      }}
     >
-      <MenuItem disabled value="">
-        State
-      </MenuItem>
-      {states.map((state) => (
-        <MenuItem key={state} value={state}>
-          {state}
+      <Select
+        displayEmpty
+        id="state"  // ✅ keep only here
+        name="state"
+        value={formData.state}
+        onChange={handleChange}
+        startAdornment={
+          <InputAdornment position="start">
+            <SearchIcon />
+          </InputAdornment>
+        }
+        required
+        sx={{ minWidth: 200, width: "100%" }}
+      >
+        <MenuItem disabled value="">
+          State
         </MenuItem>
-      ))}
-    </Select>
-  </div>
-
-  <div>
-    <Select
-      displayEmpty
-      id="city"   // ✅ keep only here
-      name="city"
-      value={formData.city}
-      onChange={handleChange}
-      startAdornment={
-        <InputAdornment position="start">
-          <SearchIcon />
-        </InputAdornment>
-      }
-      required
-      sx={{ minWidth: 200, width: "100%" }}
-    >
-      <MenuItem disabled value="">
-        City
-      </MenuItem>
-      {cities.map((city) => (
-        <MenuItem key={city} value={city}>
-          {city}
+        {states.map((state) => (
+          <MenuItem key={state} value={state}>
+            {state}
+          </MenuItem>
+        ))}
+      </Select>
+      <Select
+        displayEmpty
+        id="city"   // ✅ keep only here
+        name="city"
+        value={formData.city}
+        onChange={handleChange}
+        startAdornment={
+          <InputAdornment position="start">
+            <SearchIcon />
+          </InputAdornment>
+        }
+        required
+        sx={{ minWidth: 200, width: "100%" }}
+      >
+        <MenuItem disabled value="">
+          City
         </MenuItem>
-      ))}
-    </Select>
-  </div>
-
-  <Button
-    type="submit"
-    variant="contained"
-    size="large"
-    startIcon={<SearchIcon />}
-    sx={{ py: "15px", px: 8, flexShrink: 0 }}
-    disableElevation
-    id="searchBtn"
-  >
-    Search
-  </Button>
-</Box>
+        {cities.map((city) => (
+          <MenuItem key={city} value={city}>
+            {city}
+          </MenuItem>
+        ))}
+      </Select>
+      <Button
+        type="submit"
+        variant="contained"
+        size="large"
+        startIcon={<SearchIcon />}
+        sx={{ py: "15px", px: 8, flexShrink: 0 }}
+        disableElevation
+        id="searchBtn"
+      >
+        Search
+      </Button>
+    </Box>
   );
 }
